@@ -15,7 +15,7 @@ def index():
         rates = request.form.get('rates')
         print(rates)
         model = joblib.load("DBS_predict_linear")
-        pred = model.predict([[rates]])
+        pred = model.predict([[float(rates)]])
         print(pred)
         share_price = "The predicted DBS Share Price is $" + str(pred[0][0])
         return (render_template("index.html", result=share_price))
