@@ -20,4 +20,4 @@ def index():
         share_price = "The predicted DBS Share Price is $" + str(pred[0][0])
         return (render_template("index.html", result=share_price))
     else:
-        return (render_template("index.html", result='2'))
+        return (render_template("index.html", result='No Input Submitted. Please submit a rate!'))
